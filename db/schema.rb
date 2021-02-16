@@ -32,10 +32,11 @@
 
   create_table "players", force: :cascade do |t|
     t.string "category"
-    t.integer "id_users"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_players_on_user_id"
     t.string "status"
   end
 
@@ -58,4 +59,5 @@
 
   add_foreign_key "events", "players"
   add_foreign_key "events", "users"
+  add_foreign_key "players", "users"
 end
