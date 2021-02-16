@@ -1,16 +1,18 @@
 <div class="cards">
-    <article class="card">
-        <header>
-            <h2>A short heading</h2>
-        </header>    
-        <img src="balloons.jpg" alt="Hot air balloons">
-        <div class="content">
-            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many years ago. </p>
-        </div>      
-    </article>
-
 <ul>
   <% @players.each do |player| %>
-  <%= player.nickname %>
-  <% end %>
+    <%= link_to player_path(player) do %>
+        <% user = player.user %>
+            <article class="card">
+                <header>
+                    <h2><%= player.nickname %></h2>
+                </header>    
+                <img src="balloons.jpg" alt="Hot air balloons">
+                <div class="content">
+                    <p> <%= user.bio %> </p>
+                </div>      
+            </article>
+        <% end %>
+    <% end %>
 </ul>
+</div>
