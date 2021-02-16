@@ -2,6 +2,7 @@ class PlayersController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     @players = Player.all
+    #appeler le user?
   end
 
   def new
@@ -21,20 +22,20 @@ class PlayersController < ApplicationController
     end
   end
 
-  def edit
-    @player = Player.find(params[:id])
-  end
+  # def edit
+  #   @player = Player.find(params[:id])
+  # end
 
-  def update
-    @player = Player.find(params[:id])
-    if @player.update(player_params)
-      flash[:success] = "Object was successfully updated"
-      redirect_to @player
-    else
-      flash[:error] = "Something went wrong"
-      render 'edit'
-    end
-  end
+  # def update
+  #   @player = Player.find(params[:id])
+  #   if @player.update(player_params)
+  #     flash[:success] = "Object was successfully updated"
+  #     redirect_to @player
+  #   else
+  #     flash[:error] = "Something went wrong"
+  #     render 'edit'
+  #   end
+  # end
 
   def show
     @player = Player.find(params[:id])
@@ -54,6 +55,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:category)
+    params.require(:player).permit(:category, :nickname)
   end
 end
