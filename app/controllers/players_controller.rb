@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @players = player.all
+    @players = Player.all
   end
 
   def new
