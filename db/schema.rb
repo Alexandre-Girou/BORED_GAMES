@@ -37,7 +37,6 @@
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname"
     t.string "status"
-
   end
 
   create_table "users", force: :cascade do |t|
