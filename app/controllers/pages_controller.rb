@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @players = current_user.players
+    @players = Player.where(user_id: current_user)
+
   end
 end

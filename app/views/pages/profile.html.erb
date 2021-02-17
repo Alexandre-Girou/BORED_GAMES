@@ -1,1 +1,12 @@
-<h1>hello <%= current_user.name %></h1>
+<h1><%= current_user.name %></h1>
+
+<p>Age : <%= current_user.age %></p>
+<p>Genre : <%= current_user.genre %></p>
+<p>Bio : <%= current_user.bio %></p>
+
+<h2>Player Profile</h2>
+
+<% @players.each do |player| %>
+  <p>Nickname : <%= player.nickname %></p>
+  <p>Category : <%= player.category %></p>
+<% end %>
