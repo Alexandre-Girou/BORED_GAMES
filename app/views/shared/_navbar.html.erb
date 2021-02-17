@@ -5,7 +5,7 @@
         <%= link_to "Bored Games", root_path %>
       </i>
       <div class="user-nav">
-        <%= link_to "Créer un joueur", new_player_path %>
+        <%= link_to "Créer un joueur", new_player_path, class: "player-create" %>
         <%= link_to profile_path do %>
           <%= image_tag "https://eu.ui-avatars.com/api/?name=Captain+Price", class: "user-avatar" %>
         <% end %>
