@@ -2,6 +2,6 @@
 
 <p>I am awesome at : </p>
 <p><%= @player.category %></p>
-<p>More about me, the very awesome <%= @player.nickname %>, also known as <%= @player.user.name %> </p>
+<p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, profile_path(@player.id) %> </p>
 <p><%= @player.user.bio %></p>
-<%# <%= link_to "Réservez moi! ❤" , blabla_path %> 
+<%= link_to "Réservez moi! ❤" , new_player_event_path(@player.id) %> 

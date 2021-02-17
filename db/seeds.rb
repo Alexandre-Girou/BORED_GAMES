@@ -12,7 +12,8 @@ user_4 = User.create(name: "Alexandre", bio: "Bonjour à tous, ma passion pour l
 user_5 = User.create(name: "Charles", bio: "Hello, je suis pro player Dawn of War entre autres, je monte parallèlement ma boite de game design", age: 24, genre: "M", email: "cha@game.com", password: "123456") 
 user_6 = User.create(name: "Marie", bio: "Salut, j'adore le deck building et la belote", age: 28, genre: "F", email: "mar@game.com", password: "123456") 
 user_7 = User.create(name: "Obi Juan", bio: "Hello there", age: 28, genre: "F", email: "obi@game.com", password: "123456") 
-user_8 = User.create(name: "Doge", bio: "wow", age: 28, genre: "F", email: "dog@game.com", password: "123456") 
+user_8 = User.create(name: "Doge", bio: "wow", age: 28, genre: "F", email: "dog@game.com", password: "123456")
+user_9 = User.create(name: "Dani", bio: "Je n'ai que deux amis mais j'aime jouer", age: "29", genre: "F", email: "dan@game.com", password: "123456")
 
 
 player_1 = Player.create(category: "Board games", nickname: "Lom", user_id: 1)
@@ -23,3 +24,4 @@ player_5 = Player.create(category: "Video games", nickname: "Cha", user_id: 5)
 player_6 = Player.create(category: "Card games", nickname: "Mar", user_id: 6)
 player_7 = Player.create(category: "Board games", nickname: "Obi", user_id: 7)
 player_8 = Player.create(category: "Video games", nickname: "Dog", user_id: 8)
+player_9 = Player.create(category: "Board games", nickname: "Dym2", user_id: 3)
