@@ -1,18 +1,18 @@
-<div class="cards">
-<ul>
-  <% @players.each do |player| %>
-    <%= link_to player_path(player) do %>
-        <% user = player.user %>
-            <article class="card">
-                <header>
-                    <h2><%= player.nickname %></h2>
-                </header>
-                <img src="https://avatars.dicebear.com/v2/male/:seed.svg" alt="Hot air balloons">
-                <div class="content">
-                    <p> <%= user.bio %> </p>
-                </div>      
-            </article>
+<div class="cards-container">
+    <div class="cards">
+    <% @players.each do |player| %>
+        <%= link_to player_path(player) do %>
+            <% user = player.user %>
+                <article class="card">
+                    <header>
+                        <h2><%= player.nickname %></h2>
+                    </header>
+                    <img src="https://avatars.dicebear.com/v2/male/:seed.svg" alt="Hot air balloons">
+                    <div class="content">
+                        <p> <%= user.bio %> </p>
+                    </div>    
+                </article>
+            <% end %>
         <% end %>
-    <% end %>
-</ul>
+    </div>
 </div>
