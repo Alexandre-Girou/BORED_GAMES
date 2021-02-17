@@ -1,7 +1,9 @@
 <div class="create-player-container">
-<%= simple_form_for @player do |f| %>
-<%= f.input :category %>
-<%= f.input :nickname %>
-<%= f.submit %>
-<%  end  %>
+  <div class="form-border">
+    <%= simple_form_for @player do |f| %>
+      <%= f.input :category %>
+      <%= f.input :nickname %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
