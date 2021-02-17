@@ -7,7 +7,8 @@ class EventsController < ApplicationController
   def create
     # à modifier
     @event = Event.new(event_params)
-    @player = Player.find(params[:player_id])
+    @event.player = Player.find(params[:player_id])
+    @event.user = current_user
     if @event.save
       flash[:success] = "Event successfully created"
       redirect_to profile_path
