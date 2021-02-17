@@ -33,10 +33,18 @@
     margin-top: 12px;
     text-align: center;
   }
+  .user-avatar {
+    border-radius: 50%;
+    border: solid;
+  }
 }
 
 .user-nav {
   position: absolute;
   top: 4px;
   right: 15px;
+}
+
+.player-create {
+  font-size: 17px;
 }
