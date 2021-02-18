@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.player = Player.find(params[:player_id])
+    @event.player = Player.find(params[:id])
     @event.user = current_user
     if @event.save
       flash[:success] = "Event successfully created"

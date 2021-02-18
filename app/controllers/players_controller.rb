@@ -24,7 +24,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
-    @user = User.find(params[:id])
+    @user = @player.user
   end
 
   def destroy
@@ -40,6 +40,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:id, :category, :nickname)
+    params.require(:player).permit(:id, :category, :nickname, :price)
   end
 end
