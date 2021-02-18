@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.home-container {
+  padding-bottom: 90px;
+}
+
 .card-categories {
   margin-top: 15px;
   margin-left: 20px;
@@ -72,8 +76,8 @@
   font-size: 21px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   color: #212529;
-  background-color: #2cc97d;
-  border-color: #2cc97d;
+  background-color: $button-color;
+  border-color: $button-color;
   }
 }
 

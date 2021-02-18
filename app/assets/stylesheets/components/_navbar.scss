@@ -1,12 +1,15 @@
 .nav-bar {
+  z-index: 10000;
   position: sticky;
+  top: 0px;
   height: 80px;
   width: 100%;
   display: flex;
   max-width: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: #37C87B;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
     i {
     position: absolute;
     left: 15px;
