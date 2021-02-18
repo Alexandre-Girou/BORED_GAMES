@@ -12,8 +12,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body style="background-image: url(<%= image_url("background.jpg") %>);">
+  <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
   </body>
 </html>
+
+<%# style="background-image: url(<%= image_url("background.jpg") %>
