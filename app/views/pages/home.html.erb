@@ -1,12 +1,17 @@
-<h2 class="home-title">
-
-<strong><%= link_to "All Categories", players_path %></strong></h2>
-  <div class="card-categories">
-    <div class="card-category">Video Games</div> 
-    <div class="card-category">Card Games</div> 
-    <div class="card-category">Board Games</div> 
-    <div class="card-category">Role Playing Games</div> 
+<div class="home-container">
+  <div class="home-intro">
+  <h3><strong>Bien le bonjour aventurier</strong></h3>
+    <h4>Notre mission est de vous aider à trouver des compagnons de jeu. Sur ce site vous pouvez :</h4>
+    <p>- Créer vos joueurs selon plusieurs catégories et une invitation à rejoindre une équipe ne devrait pas tarder !<br>
+    - Choisir un joueur qui vous plait pour lui envoyé une invitation afin qu'il rejoigne votre équipe !</p>
   </div>
-
+      <div class="search-btn"><a href="/players" class="btn btn-success lg"><strong>See all players</strong></a></div>
+        <div class="card-categories">
+          <div class="card-category">Video Games</div> 
+          <div class="card-category">Card Games</div> 
+          <div class="card-category">Board Games</div> 
+          <div class="card-category">Role Playing Games</div> 
+        </div>
+</div>
 
 <%#= link_to 'destroy_user_session', destroy_user_session_path, method: :delete %>
