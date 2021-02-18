@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    # à modifier
     @event = Event.new(event_params)
     @event.player = Player.find(params[:player_id])
     @event.user = current_user

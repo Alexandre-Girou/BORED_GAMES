@@ -1,5 +1,12 @@
-<h1><%= @user.name %></h1>
+<h1><%= @player.user.name %></h1>
 
-<p>Age : <%= @user.age %></p>
-<p>Genre : <%= @user.genre %></p>
-<p>Bio : <%= @user.bio %></p>
+<p>Age : <%= @player.user.age %></p>
+<p>Genre : <%= @player.user.genre %></p>
+<p>Bio : <%= @player.user.bio %></p>
+
+<h2>Player Profile</h2>
+
+<% @players.each do |player| %>
+  <p>Nickname : <%= player.nickname %></p>
+  <p>Category : <%= player.category %></p>
+<% end %>
