@@ -7,15 +7,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.player = Player.find(params[:id])
+    @player = Player.find(params[:player_id])
+    @event.player = @player
     @event.user = current_user
-    if @event.save
-      flash[:success] = "Event successfully created"
-      redirect_to profile_path
-    else
-      flash[:error] = "Something went wrong"
-      render 'new'
-    end
+    @event.status = "pending"
+
+    redirect_to profile_path and return if @event.save
+
+    render 'new'
   end
 
   private
