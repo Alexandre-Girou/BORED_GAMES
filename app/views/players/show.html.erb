@@ -2,6 +2,10 @@
 
 <p>I am awesome at : </p>
 <p><%= @player.category %></p>
-<p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, profile_path(@player.id) %> </p>
+<p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, user_path(@user) %> </p>
 <p><%= @player.user.bio %></p>
-<%= link_to "Réservez moi! ❤" , new_player_event_path(@player.id) %> 
+<% if @player.user != current_user %>
+<%= link_to "Book me! ❤" , new_player_event_path(@user) %> 
+<% else %>
+<%= link_to "My upcoming game nights 🎲" , profile_path %>
+<% end %>
