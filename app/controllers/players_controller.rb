@@ -1,8 +1,12 @@
 class PlayersController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @players = Player.all
     # appeler le user?
+    if params[:q].present?
+      @players = Player.where(category: params[:q])
+    else
+      @players = Player.all
+    end
   end
 
   def new
