@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
+    # binding.pry
     @player = Player.find(params[:player_id])
   end
 
