@@ -7,10 +7,18 @@
   </div>
       <div class="search-btn"><a href="/players" class="btn btn-success lg"><strong>See all players</strong></a></div>
         <div class="card-categories">
-          <div class="card-category">Video Games</div> 
-          <div class="card-category">Card Games</div> 
-          <div class="card-category">Board Games</div> 
-          <div class="card-category">Role Playing Games</div> 
+          <%= link_to players_path(q: "Video-Games"), class: "card-category" do %>
+            <div >Video Games</div>
+          <% end %>
+          <%= link_to players_path(q: "Card-Games"), class:"card-category" do %>
+            <div>Card Games</div> 
+          <% end %>
+          <%= link_to players_path(q: "Board-Games"), class:"card-category" do %>
+            <div>Board Games</div> 
+          <% end %>
+          <%= link_to players_path(q: "Role-Playing-Games"), class:"card-category" do %>
+            <div>Role Playing Games</div> 
+          <% end %>
         </div>
 </div>
 
