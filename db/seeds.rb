@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Event.destroy_all
+Player.destroy_all
+User.destroy_all
+
 user_1 = User.create(name: "Lomyg", bio: "Bien le bonjour, j'ai hâte de partager de bons moments de reflexion et de stratégie avec vous!", age: 27, genre: "M", email: "lom@game.com", password: "123456") 
 user_2 = User.create(name: "Julyen", bio: "Hello tout le monde, je suis passioné de poker mais je suis ouvert aux découvertes", age: 28, genre: "M", email: "jul@game.com", password: "123456")
 user_3 = User.create(name: "Dymytry", bio: "Salut! Je fais du Donjon et Dragons depuis tout petit, mais je m'adapte à tout et suis dispo pour intégrer une campagne entière", age: 28, genre: "M", email: "dym@game.com", password: "123456") 
