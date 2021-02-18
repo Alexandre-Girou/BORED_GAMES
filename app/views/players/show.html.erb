@@ -4,7 +4,7 @@
 <p><%= @player.category %></p>
 <p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, user_path(@user) %> </p>
 <% if @player.user != current_user %>
-<%= link_to "Book me ❤" , new_player_event_path(@user) %><p>for the low, low price of <%= @player.price %> euros!</p>
+<%= link_to "Book me ❤" , new_player_event_path(@user), data: { turbolinks: 'false' } %><p>for the low, low price of <%= @player.price %> euros!</p>
 <% else %>
 <%= link_to "My upcoming game nights 🎲" , profile_path %>
 <% end %>
