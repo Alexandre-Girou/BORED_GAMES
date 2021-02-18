@@ -29,6 +29,7 @@
   }
   &:hover {
     transform: scale(1.1);
+    color: $kaki;
   }
 }
 
@@ -36,6 +37,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-bottom: 90px;
 }
 
 .card img {
