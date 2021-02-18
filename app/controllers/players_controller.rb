@@ -24,7 +24,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
-    @user = User.find(params[:id])
+    @user = User.where(params[:id])
   end
 
   def destroy

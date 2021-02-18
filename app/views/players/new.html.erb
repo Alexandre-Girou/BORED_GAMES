@@ -1,7 +1,7 @@
 <div class="create-player-container">
   <div class="form-border">
     <%= simple_form_for @player do |f| %>
-      <%= f.input :category %>
+      <%= f.input :category, collection: ["Video-Games", "Card-Games", "Board-Games", "Role-Playing-Games"] %>
       <%= f.input :nickname %>
       <%= f.submit %>
     <% end %>
