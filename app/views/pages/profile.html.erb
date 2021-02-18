@@ -1,12 +1,25 @@
 <h1><%= current_user.name %></h1>
 
-<p>Age : <%= current_user.age %></p>
-<p>Genre : <%= current_user.genre %></p>
-<p>Bio : <%= current_user.bio %></p>
+<p><strong>Age : </strong><%= current_user.age %></p>
+<p><strong>Genre : </strong><%= current_user.genre %></p>
+<p><strong>Bio : </strong><%= current_user.bio %></p>
 
 <h2>Player Profile</h2>
 
 <% @players.each do |player| %>
-  <p>Nickname : <%= player.nickname %></p>
-  <p>Category : <%= player.category %></p>
+  <p><strong>Nickname :</strong> <%= player.nickname %> <strong>Category :</strong> <%= player.category %></p>
 <% end %>
+
+<h2>I book them :</h2>
+
+<% @events.each do |event| %>
+  <p><strong>Title : </strong><%= event.title %><strong> Description : </strong><%= event.descritption %><strong> Date : </strong><%= event.start_date %> ==> <%= event.finish_date %><strong> Player : </strong><%= link_to event.player.nickname, player_path(event.player_id) %><strong> Event status : </strong><%= event.status %></p>
+<% end %>
+
+<h2>They book me :</h2>
+
+<% @books.each do |book| %>
+  <p><strong>Title : </strong><%= book.title %><strong> Description : </strong><%= book.descritption %><strong> Date : </strong><%= book.start_date %> ==> <%= book.finish_date %><strong> Player : </strong><%= link_to book.player.nickname, player_path(book.player_id) %><strong> Event status : </strong><%= book.status %></p>
+<% end %>
+
+<%= link_to "Log Out", destroy_user_session_path, method: :delete %>

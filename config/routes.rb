@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create]
   end
   get "/profile", to: 'pages#profile'
+  get "/user/:id", to: 'users#show', as: 'user'
 end

@@ -6,5 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @player = Player.find(params[:id])
+    @players = Player.where(user_id: @user)
   end
 end
