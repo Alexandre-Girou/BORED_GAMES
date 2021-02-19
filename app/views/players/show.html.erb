@@ -2,7 +2,7 @@
 
 <p>I am awesome at : </p>
 <p><%= @player.category %></p>
-<p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, user_path(@user) %> </p>
+<p>More about me, the very awesome <%= @player.nickname %>, also known as  <%= link_to @player.user.name, users_path(@user) %> </p>
 <% if @player.user != current_user %>
 <%= link_to "Book me ❤" , new_player_event_path(@player), data: { turbolinks: 'false' } %><p>for the low, low price of <%= @player.price %> euros!</p>
 <% else %>
