@@ -1,52 +1,44 @@
 
 <div class="profile-container">
   <h1><%= current_user.name %></h1>
-  
-  <p><strong>Age : </strong><%= current_user.age %></p>
-  <p><strong>Gender : </strong><%= current_user.genre %></p>
-  <p><strong>Bio : </strong><%= current_user.bio %></p>
-  
+    <p><strong>Age : </strong><%= current_user.age %></p>
+    <p><strong>Gender : </strong><%= current_user.genre %></p>
+    <p><strong>Bio : </strong><%= current_user.bio %></p>  
   <h2>Player Profile</h2>
-  
-  <% @players.each do |player| %>
-    <p><strong>Nickname :</strong> <%= player.nickname %> <strong>Category :</strong> <%= player.category %></p>
-  <% end %>
-  
+    <% @players.each do |player| %>
+      <p><strong>Nickname :</strong> <%= player.nickname %> <strong>Category :</strong> <%= player.category %></p>
+    <% end %>
   <h2>I booked them :</h2>
-  
-  <% @events.each do |event| %>
-    <p><strong>Title : </strong><%= event.title %></p>
-    <p><strong>Description : </strong><%= event.descritption %></p>
-    <p><strong>Date : </strong><%= event.start_date %> ==> <%= event.finish_date %></p> 
-    <p><strong>Player : </strong><%= link_to event.player.nickname, player_path(event.player_id) %></p>
-    <p><strong>Expected duration : </strong><%= event.duration %></p>
-    <p><strong>Event status : </strong>
-    <% if event.start_date > DateTime.now  %>
-      <%= event.status = "Upcoming!" %>
-    <% elsif event.finish_date < DateTime.now %>
-      <%= event.status = "Passed" %>
-    <% else %>
-      <%= event.status %>
+    <% @events.each do |event| %>
+      <p><strong>Title : </strong><%= event.title %></p>
+      <p><strong>Description : </strong><%= event.descritption %></p>
+      <p><strong>Date : </strong><%= event.start_date %> ==> <%= event.finish_date %></p> 
+      <p><strong>Player : </strong><%= link_to event.player.nickname, player_path(event.player_id) %></p>
+      <p><strong>Expected duration : </strong><%= event.duration %></p>
+      <p><strong>Event status : </strong>
+      <% if event.start_date > DateTime.now  %>
+        <%= event.status = "Upcoming!" %>
+      <% elsif event.finish_date < DateTime.now %>
+        <%= event.status = "Passed" %>
+      <% else %>
+        <%= event.status %>
       <% end %></p>
-    <p><strong>Total price : </strong><%= event.total_price %></p>
-  <% end %>
-  
+      <p><strong>Total price : </strong><%= event.total_price %></p>
+    <% end %>
   <h2>They booked me :</h2>
-  
-  <% @books.each do |book| %>
-    <p><strong>Title : </strong><%= book.title %>
-    <p><strong>Description : </strong><%= book.descritption %></p>
-    <p><strong>Date : </strong><%= book.start_date %> ==> <%= book.finish_date %></p>
-    <p><strong>Player : </strong><%= link_to book.player.nickname, player_path(book.player_id) %></p>
-    <p><strong>Expected duration : </strong><%= book.duration %></p>
-    <p><strong>Event status : </strong>
-    <% if event.start_date > DateTime.now  %>
-      <%= event.status = "Upcoming!" %>
-    <% elsif event.finish_date < DateTime.now %>
-      <%= event.status = "Passed" %>
-    <% else %>
-      <%= event.status %>
-    <% end %></p>
-  <% end %>
-  
+    <% @books.each do |book| %>
+      <p><strong>Title : </strong><%= book.title %>
+      <p><strong>Description : </strong><%= book.descritption %></p>
+      <p><strong>Date : </strong><%= book.start_date %> ==> <%= book.finish_date %></p>
+      <p><strong>Player : </strong><%= link_to book.player.nickname, player_path(book.player_id) %></p>
+      <p><strong>Expected duration : </strong><%= book.duration %></p>
+      <p><strong>Event status : </strong>
+      <% if event.start_date > DateTime.now  %>
+        <%= event.status = "Upcoming!" %>
+      <% elsif event.finish_date < DateTime.now %>
+        <%= event.status = "Passed" %>
+      <% else %>
+        <%= event.status %>
+      <% end %></p>
+    <% end %> 
 </div>
