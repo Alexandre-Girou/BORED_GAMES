@@ -5,7 +5,7 @@
       <p class="categ"><i class="fas fa-bolt"></i><%= @player.category %><i class="fas fa-bolt"></i></p>
       <p class="user-link">More about me, the very awesome <%= @player.nickname %>, also known as :<br> <strong><%= link_to @player.user.name, user_path(@user) %></strong></p>
       <% if @player.user != current_user %>
-        <%= link_to "Book me ❤" , new_player_event_path(@user), data: { turbolinks: 'false' } %><p class="price-string">for the low, low price of <%= @player.price %> euros!</p>
+        <%= link_to "Book me ❤" , new_player_event_path(@player), data: { turbolinks: 'false' } %><p class="price-string">for the low, low price of <%= @player.price %> euros!</p>
       <% else %>
         <%= link_to "My upcoming game nights 🎲" , profile_path %>
       <% end %>
