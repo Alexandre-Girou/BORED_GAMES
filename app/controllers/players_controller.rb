@@ -3,9 +3,9 @@ class PlayersController < ApplicationController
   def index
     # appeler le user?
     if params[:q].present?
-      @players = Player.where(category: params[:q])
+      @players = Player.where(category: params[:q]).order("id DESC")
     else
-      @players = Player.all
+      @players = Player.all.order("id DESC")
     end
   end
 
