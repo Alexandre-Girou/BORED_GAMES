@@ -5,7 +5,12 @@
         <%= link_to "Bored Games", root_path %>
       </i>
       <div class="user-nav">
-        <%= link_to "Créer un joueur", new_player_path, class: "player-create" %>
+        <%= link_to "Create a player", new_player_path, class: "player-create" %>
+        <% if current_user %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log In", profile_path %>
+        <% end %>
         <%= link_to profile_path do %>
           <%= image_tag "https://eu.ui-avatars.com/api/?name=Captain+Price", class: "user-avatar" %>
         <% end %>
