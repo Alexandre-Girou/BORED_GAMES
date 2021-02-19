@@ -16,12 +16,12 @@
   
   <% @events.each do |event| %>
     <div>
-      <input type="checkbox" id="accepter" name="accepter">
-      <label for="accepter">Accepter</label>
+      <input type="checkbox" id="accepter" name="status" value="accepted">
+      <label for="accepter">Accept</label>
     </div>
     <div>
-      <input type="checkbox" id="annuler" name="annuler">
-      <label for="annuler">Annuler</label>
+      <input type="checkbox" id="annuler" name="status" value="cancelled">
+      <label for="annuler">Cancel</label>
     </div>
     <p><strong>Title : </strong><%= event.title %></p>
     <p><strong> Description : </strong><%= event.descritption %></p>
@@ -41,8 +41,12 @@
   
   <% @books.each do |book| %>
     <div>
-      <input type="checkbox" id="refuser" name="refuser">
-      <label for="refuser">Refuser</label>
+      <input type="checkbox" id="accepter" name="status" value="accepted">
+      <label for="accepter">Accept</label>
+    </div>
+    <div>
+      <input type="checkbox" id="refuser" name="status" value="declined">
+      <label for="refuser">Refuse</label>
     </div>
     <p><strong>Title : </strong><%= book.title %>
     <p><strong> Description : </strong><%= book.descritption %></p>
