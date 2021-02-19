@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:success] = 'Bonne route, camarade...'
+      flash[:success] = 'Goodbye buddy...'
     else
-      flash[:error] = 'Les adieux sont difficiles?'
+      flash[:error] = "You don't want to leave us?"
     end
     redirect_to root_path
   end

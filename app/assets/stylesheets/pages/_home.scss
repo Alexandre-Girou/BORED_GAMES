@@ -12,7 +12,7 @@
 }
 
 .card-category {
-  background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.3) 70.71%), url(https://www.gamereactor.fr/media/43/warcraft3_3074383b.jpg);
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,0.3) 70.71%), url(https://www.gamereactor.fr/media/43/warcraft3_3074383b.jpg);
   height: 200px;
   width: 100%;
   background-position: center;
@@ -33,6 +33,84 @@
 }
 
 .card-category:hover {
+  box-shadow: 10px 10px 16px rgba(0,0,0,0.8);
+  transform: scale(1.1);
+}
+
+.card-category2 {
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,0.3) 70.71%), url(https://media.pocketgamer.com/artwork/na-bkdft/hearthstone-5.png);
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
+  float: left;
+  justify-content: space-around;
+}
+
+.card-category2:hover {
+  box-shadow: 10px 10px 16px rgba(0,0,0,0.8);
+  transform: scale(1.1);
+}
+
+.card-category3 {
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,0.3) 70.71%), url(https://assets.dicebreaker.com/warhammer-40k-miniatures-game-miniatures-image-1.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/warhammer-40k-miniatures-game-miniatures-image-1.jpg);
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
+  float: left;
+  justify-content: space-around;
+}
+
+.card-category3:hover {
+  box-shadow: 10px 10px 16px rgba(0,0,0,0.8);
+  transform: scale(1.1);
+}
+
+.card-category4 {
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,0.3) 70.71%), url(https://i2.wp.com/gusandco.net/wp-content/uploads/2015/08/unepic-pc-role-playing-game-1.jpg?ssl=1);
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
+  float: left;
+  justify-content: space-around;
+}
+
+.card-category4:hover {
   box-shadow: 10px 10px 16px rgba(0,0,0,0.8);
   transform: scale(1.1);
 }

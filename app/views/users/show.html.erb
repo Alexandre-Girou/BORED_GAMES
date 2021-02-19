@@ -1,12 +1,29 @@
+  <div class="profile-info">
 <h1><%= @user.name %></h1>
-
 <p>Age : <%= @user.age %></p>
-<p>Genre : <%= @user.genre %></p>
+<p>Gender : <%= @user.genre %></p>
 <p>Bio : <%= @user.bio %></p>
-
+  </div>
 <h2>Player Profile</h2>
-
-<% @players.each do |player| %>
-  <p>Nickname : <%= player.nickname %></p>
-  <p>Category : <%= player.category %></p>
-<% end %>
+<div class="cards-container">
+    <div class="cards">
+    <% @players.each do |player| %>
+        <%= link_to player_path(player) do %>
+            <% user = player.user %>
+                <article class="card">
+                    <header>
+                        <h2><%= player.nickname %></h2>
+                    </header>
+                    <% if player.gender == "Male" %>
+                        <%= image_tag "male_avatar.png" %>
+                    <% else %>
+                        <%= image_tag "female_avatar.jpg" %>
+                    <% end %>
+                    <div class="content">
+                        <p>Category : <%= player.category %> </p>
+                    </div>    
+                </article>
+            <% end %>
+        <% end %>
+    </div>
+</div>

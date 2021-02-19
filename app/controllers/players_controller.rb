@@ -3,9 +3,9 @@ class PlayersController < ApplicationController
   def index
     # appeler le user?
     if params[:q].present?
-      @players = Player.where(category: params[:q])
+      @players = Player.where(category: params[:q]).order("id DESC")
     else
-      @players = Player.all
+      @players = Player.all.order("id DESC")
     end
   end
 
@@ -19,10 +19,10 @@ class PlayersController < ApplicationController
     @player.price = 
 
     if @player.save
-      flash[:success] = "Sois le bienvenu, #{@player.nickname}"
+      flash[:success] = "Welcome, #{@player.nickname} !"
       redirect_to @player
     else
-      flash[:error] = "Eh bien, manant?"
+      flash[:error] = "Hey peasant, you made a mistake.."
       render 'new'
     end
   end
@@ -35,9 +35,9 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     if @player.destroy
-      flash[:success] = 'Bonne route, camarade...'
+      flash[:success] = 'Goodbye buddy...'
     else
-      flash[:error] = 'Les adieux sont difficiles?'
+      flash[:error] = "You don't want to leave us?"
     end
     redirect_to root_path
   end
@@ -45,6 +45,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:id, :category, :nickname, :price)
+    params.require(:player).permit(:id, :category, :nickname, :price, :gender)
   end
 end
