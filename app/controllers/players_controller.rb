@@ -19,10 +19,10 @@ class PlayersController < ApplicationController
     @player.price = 
 
     if @player.save
-      flash[:success] = "Sois le bienvenu, #{@player.nickname}"
+      flash[:success] = "Welcome, #{@player.nickname} !"
       redirect_to @player
     else
-      flash[:error] = "Eh bien, manant?"
+      flash[:error] = "Hey peasant, you made a mistake.."
       render 'new'
     end
   end
@@ -35,9 +35,9 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     if @player.destroy
-      flash[:success] = 'Bonne route, camarade...'
+      flash[:success] = 'Goodbye buddy...'
     else
-      flash[:error] = 'Les adieux sont difficiles?'
+      flash[:error] = "You don't want to leave us?"
     end
     redirect_to root_path
   end
