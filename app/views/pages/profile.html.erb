@@ -24,17 +24,19 @@
       <label for="annuler">Cancel</label>
     </div>
     <p><strong>Title : </strong><%= event.title %></p>
-    <p><strong> Description : </strong><%= event.descritption %></p>
-    <p><strong> Date : </strong><%= event.start_date %> ==> <%= event.finish_date %></p> 
+    <p><strong>Description : </strong><%= event.descritption %></p>
+    <p><strong>Date : </strong><%= event.start_date %> ==> <%= event.finish_date %></p> 
     <p><strong>Player : </strong><%= link_to event.player.nickname, player_path(event.player_id) %></p>
-    <p><strong> Event status : </strong>
+    <p><strong>Expected duration : </strong><%= event.duration %></p>
+    <p><strong>Event status : </strong>
     <% if event.start_date > DateTime.now  %>
-    <%=  event.status = "Upcoming!" %>
+      <%= event.status = "Upcoming!" %>
     <% elsif event.finish_date < DateTime.now %>
-    <%=  event.status = "Passed" %>
+      <%= event.status = "Passed" %>
     <% else %>
-    <%=  event.status %>
-    <% end %></p>
+      <%= event.status %>
+      <% end %></p>
+    <p><strong>Total price : </strong><%= event.total_price %></p>
   <% end %>
   
   <h2>They booked me :</h2>
@@ -49,16 +51,17 @@
       <label for="refuser">Refuse</label>
     </div>
     <p><strong>Title : </strong><%= book.title %>
-    <p><strong> Description : </strong><%= book.descritption %></p>
-    <p><strong> Date : </strong><%= book.start_date %> ==> <%= book.finish_date %></p>
-    <p><strong> Player : </strong><%= link_to book.player.nickname, player_path(book.player_id) %></p>
-    <p><strong> Event status : </strong>
+    <p><strong>Description : </strong><%= book.descritption %></p>
+    <p><strong>Date : </strong><%= book.start_date %> ==> <%= book.finish_date %></p>
+    <p><strong>Player : </strong><%= link_to book.player.nickname, player_path(book.player_id) %></p>
+    <p><strong>Expected duration : </strong><%= book.duration %></p>
+    <p><strong>Event status : </strong>
     <% if event.start_date > DateTime.now  %>
-    <%=  event.status = "Upcoming!" %>
+      <%= event.status = "Upcoming!" %>
     <% elsif event.finish_date < DateTime.now %>
-    <%=  event.status = "Passed" %>
+      <%= event.status = "Passed" %>
     <% else %>
-    <%=  event.status %>
+      <%= event.status %>
     <% end %></p>
   <% end %>
   
