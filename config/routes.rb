@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create]
   end
   get "/profile", to: 'pages#profile'
-  get "/users/:id", to: 'users#show', as: 'user'
+  get "/users/:id", to: 'users#show', as: 'users'
 end
