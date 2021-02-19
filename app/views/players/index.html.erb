@@ -7,7 +7,11 @@
                     <header>
                         <h2><%= player.nickname %></h2>
                     </header>
-                    <img src="https://avatars.dicebear.com/v2/male/:seed.svg" alt="Hot air balloons">
+                    <% if player.gender == "Male" %>
+                        <%= image_tag "male_avatar.png" %>
+                    <% else %>
+                        <%= image_tag "female_avatar.jpg" %>
+                    <% end %>
                     <div class="content">
                         <p>Category : <%= player.category %> </p>
                     </div>    
