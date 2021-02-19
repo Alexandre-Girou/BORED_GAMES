@@ -16,12 +16,13 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     @player.user = current_user
+    @player.price = 
 
     if @player.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = "Sois le bienvenu, #{@player.nickname}"
       redirect_to @player
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = "Eh bien, manant?"
       render 'new'
     end
   end
@@ -34,9 +35,9 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     if @player.destroy
-      flash[:success] = 'Object was successfully deleted.'
+      flash[:success] = 'Bonne route, camarade...'
     else
-      flash[:error] = 'Something went wrong'
+      flash[:error] = 'Les adieux sont difficiles?'
     end
     redirect_to root_path
   end
