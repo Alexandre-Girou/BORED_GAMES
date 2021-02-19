@@ -3,9 +3,9 @@ class PlayersController < ApplicationController
   def index
     # appeler le user?
     if params[:q].present?
-      @players = Player.where(category: params[:q])
+      @players = Player.where(category: params[:q]).order("id DESC")
     else
-      @players = Player.all
+      @players = Player.all.order("id DESC")
     end
   end
 
@@ -16,12 +16,13 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     @player.user = current_user
+    @player.price = 
 
     if @player.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = "Welcome, #{@player.nickname} !"
       redirect_to @player
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = "Hey peasant, you made a mistake.."
       render 'new'
     end
   end
@@ -34,9 +35,9 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     if @player.destroy
-      flash[:success] = 'Object was successfully deleted.'
+      flash[:success] = 'Goodbye buddy...'
     else
-      flash[:error] = 'Something went wrong'
+      flash[:error] = "You don't want to leave us?"
     end
     redirect_to root_path
   end
