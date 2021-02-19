@@ -18,6 +18,24 @@ class EventsController < ApplicationController
     render 'new'
   end
 
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(status: params[:event][:status])
+      flash[:success] = "Noted!"
+      redirect_to profile_path
+    else
+      flash[:error] = "Wow you're not really good at this, are you?"
+      render 'profile'
+    end
+  end
+
+  def acceptordeny
+    @event = Event.find(params[:id])
+    @event.update(status: params[:status])
+    redirect_to profile_path
+  end
+  
+
   # def destroy
   #   @event = Event.find(params[:id])
   #   if @event.status == "refuse"
@@ -33,6 +51,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :descritption, :start_date, :finish_date, :duration)
+    params.require(:event).permit(:title, :descritption, :start_date, :finish_date, :duration, :status)
   end
 end
