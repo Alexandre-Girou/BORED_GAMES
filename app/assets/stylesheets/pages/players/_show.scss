@@ -1,0 +1,63 @@
+.show-player-container {
+  width: 50%;
+  height: 500px;
+  padding: 40px;
+  text-align: center;
+  border: solid;
+  border-radius: 10px;
+  background-color: $navbar-color;
+  h1 {
+    font-size: 45px;
+  }
+  .awesome {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  .categ {
+    margin-bottom: 20px;
+    margin-top: 18px;
+    margin-right: auto;
+    font-size: 30px;
+    width: 55%;
+    padding: 5px;
+    background-color: #f99e0a;
+    margin-left: auto;
+    border-radius: 50px;
+  }
+  .user-link {
+    font-size: 22px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+  }
+  .fas {
+    font-size: 20px;
+    padding: 8px
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: #37c87b;
+    border-radius: 25px;
+    font-size: 25px;
+    line-height: 45px;
+  }
+  a:hover {
+    color: whitesmoke;
+    background-color: #18b06c;
+    border-color: #16a565;
+  }
+  .price-string {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+}
+
+
+.bigger-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 150px;
+}
